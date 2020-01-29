@@ -1,0 +1,37 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.container {
+    padding: 0 10px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 10px;
+  }
+  
+  [class^=col] {
+    margin-top: 10px;
+    flex-basis: 100%;
+    min-height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  $themes: ("1": $theme-1, "2": $theme-2, "3": $theme-3,
+    "4": $theme-4, "5": $theme-5, "6": $theme-6,
+    "7": $theme-7, "8": $theme-8, "9": $theme-9,
+    "10": $theme-10, "11": $theme-11, "12": $theme-12);
+
+  @each $num, $color in $themes {
+    .theme.col-#{$num} {
+      background-color: $color;
+    }
+  }
+  
+  .card {
+    flex-basis: 100%;
+  }
+  

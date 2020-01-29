@@ -1,5 +1,6 @@
  /* ============================================= */
- /* Utilities Imports */
+ /* Sub-Folder Imports */
  /* ============================================= */
- @import 'variables',
-    'mixins';
+ @import 'utilities/index',
+    'base/index',
+    'components/index';

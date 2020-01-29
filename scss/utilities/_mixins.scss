@@ -1,0 +1,9 @@
+@mixin box-size() {
+    box-sizing: border-box;
+}
+
+@mixin center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
