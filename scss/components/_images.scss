@@ -26,3 +26,10 @@
     margin-right: auto;
   }
 }
+
+.logo {
+  @include query($break-m) {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}

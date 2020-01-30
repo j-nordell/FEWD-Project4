@@ -406,25 +406,55 @@ a {
   text-transform: uppercase;
   border-radius: 5px;
 }
+@media (min-width: 768px) {
+  .btn {
+    padding: 10px 30px;
+  }
+}
+@media (min-width: 768px) {
+  .btn + .btn {
+    margin-left: 10px;
+  }
+}
 
 .default {
   background-color: #51ddfc;
+}
+.default:hover {
+  background-color: #9cecfd;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .error {
   background-color: #e4757a;
 }
+.error:hover {
+  background-color: #f1b5b8;
+  transition: background-color 0.2s ease-in-out;
+}
 
 .info {
   background-color: #927bc1;
+}
+.info:hover {
+  background-color: #bdafd9;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .success {
   background-color: #63cc82;
 }
+.success:hover {
+  background-color: #9ddfb0;
+  transition: background-color 0.2s ease-in-out;
+}
 
 .warning {
   background-color: #fd7856;
+}
+.warning:hover {
+  background-color: #feb4a2;
+  transition: background-color 0.2s ease-in-out;
 }
 
 /* ============================================= */
@@ -461,7 +491,13 @@ a {
   display: flex;
   flex-direction: column;
 }
-
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 .nav-link {
   text-align: center;
   border-radius: 5px;
@@ -470,7 +506,11 @@ a {
   width: 100%;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-
+@media (min-width: 768px) {
+  .nav-link {
+    flex-basis: 100px;
+  }
+}
 .nav-link:hover {
   color: #fff;
   background-color: #58e1c1;
@@ -498,17 +538,45 @@ a {
   margin-right: auto;
 }
 
+@media (min-width: 768px) {
+  .logo {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}
+
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
 .container {
   padding: 0 10px;
 }
+@media (min-width: 768px) {
+  .container {
+    max-width: 1400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .row {
   display: flex;
   flex-direction: column;
   padding: 1em 10px;
+}
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+  }
 }
 
 [class^=col] {
@@ -517,6 +585,19 @@ a {
   min-height: 25px;
   padding: 10px;
   border-radius: 5px;
+}
+@media (min-width: 768px) {
+  [class^=col] {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  [class^=col] + [class^=col] {
+    margin-left: 10px;
+  }
 }
 
 .theme.col-1 {
@@ -567,42 +648,7 @@ a {
   background-color: #80e8d1;
 }
 
-.card {
-  flex-basis: 100%;
-}
-
-/* ============================================= */
-/*              Media Queries                    */
-/* ============================================= */
 @media (min-width: 768px) {
-  .container {
-    max-width: 1400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .centered {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .row {
-    flex-direction: row;
-  }
-
-  [class^=col] {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-    align-items: center;
-  }
-
-  [class^=col] + [class^=col] {
-    margin-left: 10px;
-  }
-
   .col-1 {
     flex-basis: 8.3333333333%;
   }
@@ -650,29 +696,64 @@ a {
   .col-12 {
     flex-basis: 100%;
   }
-
-  .nav {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .nav-link {
-    flex-basis: 100px;
-  }
-
-  .btn {
-    padding: 10px 30px;
-  }
-
-  .btn + .btn {
-    margin-left: 10px;
-  }
-
-  .logo {
-    margin-left: initial;
-    margin-right: initial;
-  }
 }
+.card {
+  flex-basis: 100%;
+}
+
+/* ============================================= */
+/*              Media Queries                    */
+/* ============================================= */
+/*
+@media (min-width: $break-m) {
+
+    .container {
+      max-width: 1400px;
+      @include center-block();
+    }
+
+
+    .centered {
+      @include center-block();
+    }
+
+
+    .row {
+      flex-direction: row;
+    }
+
+    [class^=col] {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      align-items: center;
+    }
+
+    [class^=col] + [class^=col] {
+      margin-left: 10px;
+    }
+
+    .nav {
+
+    }
+
+    .nav-link {
+      flex-basis: 100px;
+    }
+
+    .btn {
+      padding: 10px 30px;
+    }
+
+    .btn + .btn {
+      margin-left: 10px;
+    }
+
+    .logo {
+      margin-left: initial;
+      margin-right: initial;
+    }
+
+    } */
 
 /*# sourceMappingURL=styles.css.map */
